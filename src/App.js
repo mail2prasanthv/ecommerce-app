@@ -1,50 +1,42 @@
-
+import { getByTitle } from "@testing-library/react";
 
 function App() {
+
+  const categories = [
+     {
+      id   : 1,
+      title: 'HATS'
+     },
+     {
+      id   : 2,
+      title: 'JACKETS'
+     },
+     {
+      id   : 3,
+      title: 'SNEAKERS'
+     },
+     {
+      id   : 4,
+      title: 'WOMENS'
+     },
+     {
+      id   : 5,
+      title: 'MENS'
+     }
+  ]
   return (
     <div className="categories-container">
-
-      <div className="category-container">
-        {/*image*/}
-        <div className="category-body-container">
-          <h2>HATS</h2>
-          <h3>Shop Now</h3>
-        </div>
-      </div>
-
-      <div className="category-container">
-        {/*image*/}
-        <div className="category-body-container">
-          <h2>JACKETS</h2>
-          <h3>Shop Now</h3>
-        </div>
-      </div>
-
-      <div className="category-container">
-        {/*image*/}
-        <div className="category-body-container">
-          <h2>SNEAKERS</h2>
-          <h3>Shop Now</h3>
-        </div>
-      </div>
-
-      <div className="category-container">
-        {/*image*/}
-        <div className="category-body-container">
-          <h2>WOMENS</h2>
-          <h3>Shop Now</h3>
-        </div>
-      </div>
-
-      <div className="category-container">
-        {/*image*/}
-        <div className="category-body-container">
-          <h2>MENS</h2>
-          <h3>Shop Now</h3>
-        </div>
-      </div>
-
-      
+      {
+      categories.map((eachCategory)=>
+                      <div className="category-container">
+                        <div className="category-image"/>
+                        <div className="category-body-container">
+                          <h2>{eachCategory.title}</h2>
+                          <h3>Shop Now</h3>
+                        </div>
+                      </div>
+                    )
+      }
     </div>
   );
 }

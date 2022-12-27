@@ -1,4 +1,5 @@
 import { getByTitle } from "@testing-library/react";
+import "./categories.styles.scss";
 
 function App() {
 

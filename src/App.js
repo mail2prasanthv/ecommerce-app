@@ -1,5 +1,7 @@
 import { getByTitle } from "@testing-library/react";
 import "./categories.styles.scss";
+import CategoryItem  from "./components/categoryitem/categoryitem.component"
+import Directory from "./components/directory/directory.component";
 
 function App() {
 
@@ -31,23 +33,7 @@ function App() {
     }
   ]
   return (
-    <div className="categories-container">
-      {
-      categories.map(({id, title, imageUrl})=>
-                      <div key={id} className="category-container">
-                        <div className="category-image" 
-                        style={{
-                          backgroundImage: `url(${imageUrl})`
-                        }}/>
-
-                        <div className="category-body-container">
-                          <h2>{title}</h2>
-                          <h3>Shop Now</h3>
-                        </div>
-                      </div>
-                    )
-      }
-    </div>
+    <Directory categories = {categories}></Directory>
   );
 }
 

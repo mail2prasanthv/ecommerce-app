@@ -3,6 +3,7 @@ import Directory from "../directory/directory.component";
 import { Outlet } from "react-router-dom";
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
+import {ReactComponent as ApplicationLogo} from "../../assets/crown.svg"
 
 const NavigationPane=() =>{
 
@@ -12,7 +13,10 @@ const NavigationPane=() =>{
       <Fragment>
         <div className="navigation">
 
-        <Link className='logo-container' to="/"><div>Logo</div> </Link>
+        <Link className='logo-container' to="/">
+          <ApplicationLogo/>
+
+        </Link>
 
           <div className="links-container">
             <Link className='nav-link' to="/shop">Shop</Link> 

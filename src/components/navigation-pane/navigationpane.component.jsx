@@ -1,19 +1,35 @@
 
 import Directory from "../directory/directory.component";
 import { Outlet } from "react-router-dom";
+import { Fragment } from "react";
+import { Link } from "react-router-dom";
 
 const NavigationPane=() =>{
 
 
    
       return (
-        <div>
-          <h1>Logo</h1>
-          <h1>Shop</h1>
-          <h1>Contact</h1>
-          <h1>sign In</h1>
+      <Fragment>
+        <div className="navigation">
+
+        <Link className='logo-container' to="/"><div>Logo</div> </Link>
+
+          <div className="links-container">
+            <Link className='nav-link' to="/shop">Shop</Link> 
+          </div>
+
+          <div className="links-container">
+            <Link className='nav-link' to="/contact">Contact</Link> 
+          </div>
+
+          <div className="links-container">
+            <Link className='nav-link' to="/signin">Sign In</Link> 
+          </div>
+
+          
           <Outlet/>
         </div>
+      </Fragment>
       );
 };
 

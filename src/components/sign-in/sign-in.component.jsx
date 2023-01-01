@@ -1,13 +1,14 @@
 
 import Directory from "../directory/directory.component";
 import { Outlet } from "react-router-dom";
-import {signInWithGooglePopup} from '../../utils/firebase/firebase.utils'
+import {signInWithGooglePopup, createuserDocumentFromAuthService} from '../../utils/firebase/firebase.utils'
 
 const SignIn=() =>{
 
   const logGoogleuser= async() => {
-    const response = await signInWithGooglePopup();
-    console.log(response);
+    const {user} = await signInWithGooglePopup();
+    const  userDocRef = await createuserDocumentFromAuthService(user);
+    
   }
 
    

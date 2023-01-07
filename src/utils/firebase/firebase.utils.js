@@ -10,7 +10,7 @@ const firebaseConfig = {
   apiKey: "AIzaSyDR2ZOjN54T4GRXDda-8gGJU8gznwwc6ZM",
   authDomain: "ecommerce-app-e8630.firebaseapp.com",
   projectId: "ecommerce-app-e8630",
-  storageBucket: "ecommerce-app-e8630.appspot.com",
+  storageBucket: "ecommerce-app-e8630.appspot.com", 
   messagingSenderId: "637218688942",
   appId: "1:637218688942:web:c0109369ce9e813020023f"
 };
@@ -18,14 +18,15 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-const provider = new GoogleAuthProvider();
+const googleProvider = new GoogleAuthProvider();
 
-provider.setCustomParameters({
+googleProvider.setCustomParameters({
     prompt: "select_account"
 });
 
 export const auth = getAuth();
-export const signInWithGooglePopup=()=>signInWithPopup(auth,provider);
+export const signInWithGooglePopup=()=>signInWithPopup(auth,googleProvider);
+export const signInWithGoogleRedirect=() => signInWithRedirect(auth,googleProvider);
 
 export const db = getFirestore();
 
